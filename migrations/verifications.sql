@@ -25,3 +25,14 @@ Plat 2:Ravitoto Catégorie :Plat malgache
 on va avoir 2 categorie Plat malagasy et Plat malgache alors que c est la meme chose
 si on veut avoir tous les plats malagasy plat malgache ne sera pas pris en compte
 
+
+-- ETAPES 3
+SELECT c.daty, SUM(cp.quantite*p.prix) FROM Commande_Plat as cp 
+JOIN Commande as c
+ON cp.id_commande=c.id_commande 
+JOIN Plat as p 
+ON cp.id_plat=p.id_plat
+GROUP BY c.id_commande;
+
+-- Où placez-vous la quantité
+-> dans Commande_Plat
