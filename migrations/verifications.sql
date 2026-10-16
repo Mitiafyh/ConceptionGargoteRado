@@ -36,3 +36,18 @@ GROUP BY c.id_commande;
 
 -- Où placez-vous la quantité
 -> dans Commande_Plat
+
+-- ETAPES 4
+INSERT INTO client (nom_client) values ('Mitia');
+
+UPDATE commande SET id_client = 1 where id_commande = 1;
+
+select c.daty , case 
+    when c.id_client is null then 'client de passage'
+    else cl.nom_client
+    end as nom_client
+ from commande as c
+left join client as cl on c.id_client = cl.id_client;
+
+
+ma clé étrangère n est pas NOT NULL

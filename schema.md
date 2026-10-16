@@ -8,3 +8,6 @@ Categorie(**id_categorie**,nom_categorie) (nouveau)
 ## Etape 3
 Commande(**id_commande** ,date)(nouveau)
 Commande_Plat(**id_commande_plat**,#id_commande,#id_plat,quantite)(nouveau)
+
+## Etape 4
+client(**id_client** ,nom_client)(nouveau)
