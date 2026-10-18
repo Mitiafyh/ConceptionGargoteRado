@@ -8,7 +8,7 @@ CREATE TABLE Plat(
     prix INTEGER
 );
 INSERT INTO Plat(nom_plat,nom_categorie,prix) VALUES 
-('Romazava,Plat malagasy,7000','Plat malagasy',7000),
+('Romazava','Plat malagasy',7000),
 ('Ravitoto sy henakisoa','Plat malagasy',8000),
 ('Akoho sy voanio','Plat malagasy',8500),
 ('Mi sao','Plat chinois',6000),

@@ -21,3 +21,6 @@ Commande(**id_commande** ,date,#id_client,#id_serveur,#id_table) (modifié)
 ## Etape 6
 mode_paiement(**id_mode_paiement**,mode_paiement)(nouveau)
 paiement(**id_paiement**,#id_commande,#id_mode_paiement,montant,reference_transaction,daty) (nouveau)
+
+## Etape 7
+Commande_Plat(**id_commande_plat**,#id_commande,#id_plat,quantite,prix_umitaire)(modifié)

@@ -93,3 +93,8 @@ WHERE (tc.total-COALESCE(tp.paye,0))>0;
 montant_paye dans la table des commandes ne suffit  pas car on ne pourra pas avoir l historique de paiment de chaque commande
 
 
+-- ETAPE 7
+UPDATE plat SET prix=7500 WHERE nom_plat='Romazava';
+
+Pour la commande 1, on constate que le facture a augmenté 
+
