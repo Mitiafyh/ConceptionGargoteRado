@@ -24,3 +24,9 @@ paiement(**id_paiement**,#id_commande,#id_mode_paiement,montant,reference_transa
 
 ## Etape 7
 Commande_Plat(**id_commande_plat**,#id_commande,#id_plat,quantite,prix_umitaire)(modifié)
+histo_prix_plat(**id_histo_prix_plat**,#id_plat,prix_unitaire,daty) (nouveau)
+
+
+## Etape 8
+ingredient(**id_ingredient**,nom_ingredient,unite,stock) (nouveau)
+plat_ingredient(**id_plat_ingredient**,#id_plat,#id_ingredient) (nouveau)

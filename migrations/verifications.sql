@@ -98,3 +98,19 @@ UPDATE plat SET prix=7500 WHERE nom_plat='Romazava';
 
 Pour la commande 1, on constate que le facture a augmenté 
 
+-- ETAPE 8
+
+select
+    i.nom_ingredient as ingredient,
+    i.unite,
+    sum(pi.quantite*cp.quantite) as consommation_theorique
+    from commande c
+    join commande_plat cp on c.id_commande=cp.id_commande
+    join plat_ingredient pi on cp.id_plat=pi.id_plat
+    join ingredient as i on pi.id_plat_ingredient=i.id_ingredient
+    where c.daty='2026-10-12'
+    group by i.nom_ingredient,i.unite;
+
+-> ingredients VARCHAR(500) contenant « riz, zébu, brèdes » n est pas conseillé car 
+on ne poura pas faire des calculs sur chaque ingredient
+ 
