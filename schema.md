@@ -13,7 +13,11 @@ Commande_Plat(**id_commande_plat**,#id_commande,#id_plat,quantite)(nouveau)
 client(**id_client** ,nom_client)(nouveau)
 Commande(**id_commande** ,date,#id_client) (modifié)
 
-##Etape 5
+## Etape 5
 serveurs(**id_serveur**,nom,prenom)(nouveau)
 tables(**id_table**,nom_table)(nouveau)
 Commande(**id_commande** ,date,#id_client,#id_serveur,#id_table) (modifié)
+
+## Etape 6
+mode_paiement(**id_mode_paiement**,mode_paiement)(nouveau)
+paiement(**id_paiement**,#id_commande,#id_mode_paiement,montant,reference_transaction,daty) (nouveau)

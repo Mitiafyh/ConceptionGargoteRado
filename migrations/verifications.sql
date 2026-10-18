@@ -68,5 +68,28 @@ group by f.nom;
 
 
 le nom table pose un problème en SQL car 'table' est une commande en sql
-ce qui crée une confusion de la base en pensant que c'est une erreur de syntax
+ce qui crée une confusion de la base en pensant que c est une erreur de syntax
+
+-- ETAPES 6
+
+WITH total_commande as(
+    SELECT c.daty,c.id_commande,SUM(cp.quantite*p.prix) as total 
+    FROM commande_plat as cp 
+JOIN Commande as c ON cp.id_commande=c.id_commande 
+JOIN plat as p ON cp.id_plat=p.id_plat
+GROUP BY c.id_commande,c.daty
+),
+total_paye as(
+    SELECT c.id_commande,sum(p.montant) as paye from commande as c
+LEFT JOIN paiement as p ON c.id_commande=p.id_commande
+group by c.id_commande
+
+)
+SELECT tc.id_commande,tc.total,COALESCE(tp.paye,0),(tc.total-COALESCE(tp.paye,0)) as reste 
+from total_commande as tc
+JOIN total_paye as tp ON tc.id_commande=tp.id_commande
+WHERE (tc.total-COALESCE(tp.paye,0))>0;
+
+montant_paye dans la table des commandes ne suffit  pas car on ne pourra pas avoir l historique de paiment de chaque commande
+
 
