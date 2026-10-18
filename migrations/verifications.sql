@@ -51,3 +51,22 @@ left join client as cl on c.id_client = cl.id_client;
 
 
 ma clé étrangère n est pas NOT NULL
+-- Quelle jointure faut-il pour ne perdre aucune commande?
+-> left join
+
+-- ETAPES 5
+
+select f.nom,count(f.id_commande) as nb_commande,sum(total) as CA from (SELECT c.id_commande,s.nom, SUM(cp.quantite*p.prix) as total FROM Commande_Plat as cp 
+JOIN Commande as c
+ON cp.id_commande=c.id_commande 
+JOIN Plat as p 
+ON cp.id_plat=p.id_plat
+RIGHT JOIN serveurs as s
+on s.id_serveur=c.id_serveur
+GROUP BY c.id_commande,s.nom) as f
+group by f.nom;
+
+
+le nom table pose un problème en SQL car 'table' est une commande en sql
+ce qui crée une confusion de la base en pensant que c'est une erreur de syntax
+
