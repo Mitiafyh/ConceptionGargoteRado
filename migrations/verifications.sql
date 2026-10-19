@@ -114,3 +114,15 @@ select
 -> ingredients VARCHAR(500) contenant « riz, zébu, brèdes » n est pas conseillé car 
 on ne poura pas faire des calculs sur chaque ingredient
  
+ -- ETAPE 9
+ select m.nom_menu,m.prix as prix_menu,
+ sum(p.prix) as prix_simple, 
+ (sum(p.prix)-m.prix) as economie
+    from menu m
+    join plat_menu as pm on m.id_menu=pm.id_menu
+    join plat as p on pm.id_plat=p.id_plat
+    group by m.nom_menu,m.prix;
+
+
+créer une table menu séparée est necessaire pour différencier les plats, des plats composés
+

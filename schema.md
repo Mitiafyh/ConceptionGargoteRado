@@ -30,3 +30,7 @@ histo_prix_plat(**id_histo_prix_plat**,#id_plat,prix_unitaire,daty) (nouveau)
 ## Etape 8
 ingredient(**id_ingredient**,nom_ingredient,unite,stock) (nouveau)
 plat_ingredient(**id_plat_ingredient**,#id_plat,#id_ingredient) (nouveau)
+
+## Etape 9
+menu(**id_menu**,nom_menu,prix) (nouveau)
+plat_menu(**id_plat_menu**,id_menu,id_plat) (nouveau)
